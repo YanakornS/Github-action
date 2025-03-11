@@ -13,77 +13,111 @@
         /* Hero Section Styles */
         .hero-section {
             background-color: #333;
-            /* เปลี่ยนสีพื้นหลังให้เข้มขึ้น */
             text-align: center;
             padding: 120px 0;
             background-image: url('https://via.placeholder.com/1600x900');
-            /* คุณสามารถเปลี่ยน URL ของภาพได้ */
             background-size: cover;
             background-position: center;
             color: white;
-            /* ให้สีของข้อความเป็นขาวเพื่อให้มองเห็นชัด */
-            background-blur: 5px;
-            /* เพิ่มเอฟเฟ็กต์เบลอพื้นหลัง */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            /* เพิ่มเงาให้ข้อความ */
+            margin-bottom: 20px;
         }
 
         .hero-text p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            /* เพิ่มเงาให้ข้อความ */
         }
 
         .hero-btn {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             padding: 15px 30px;
             border-radius: 30px;
-            background-color: #007bff;
+            background-color: #ff6f61;
             color: white;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .hero-btn:hover {
-            background-color: #0056b3;
+            background-color: #e94e42;
+            transform: translateY(-5px);
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: 700;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            font-size: 1.1rem;
+            margin-right: 15px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff6f61;
         }
 
         /* About Section Styles */
         .about-section {
-            background-color: #e9ecef;
-            padding: 60px 0;
+            background-color: #f8f9fa;
+            padding: 80px 0;
             text-align: center;
         }
 
         .about-section h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .about-section p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #555;
             max-width: 800px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
         /* Footer Styles */
         .footer {
             background-color: #343a40;
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
         }
 
         .footer a {
             color: white;
-            margin: 0 10px;
+            margin: 0 15px;
         }
 
         .footer a:hover {
@@ -94,8 +128,35 @@
 
 <body>
 
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Our Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section (Welcome Section) -->
-    <section class="hero-section">
+    <section id="home" class="hero-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
